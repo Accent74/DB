@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[ACC_DATA] (
+    [ADT_ID]     INT            IDENTITY (1, 1) NOT NULL,
+    [ADT_CODE]   INT            NULL,
+    [ADT_FILE]   NVARCHAR (255) NULL,
+    [ADT_SCRIPT] NTEXT          NULL,
+    CONSTRAINT [PK_ACC_DATA] PRIMARY KEY NONCLUSTERED ([ADT_ID] ASC)
+);
+

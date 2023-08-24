@@ -1,0 +1,3 @@
+﻿CREATE USER [_Admin] FOR LOGIN [Admin1]
+    WITH DEFAULT_SCHEMA = [_Admin1];
+

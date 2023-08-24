@@ -1,0 +1,27 @@
+﻿CREATE TABLE [dbo].[ENT_ASSETS] (
+    [ENT_ID]             INT            NOT NULL,
+    [AST_IN_DATE]        DATETIME       NULL,
+    [AST_ENABLED]        BIT            NOT NULL,
+    [AST_IN_ACT_NO]      NVARCHAR (50)  NULL,
+    [AST_IN_ACT_DATE]    DATETIME       NULL,
+    [AST_LAST_OWNER_ID]  INT            NULL,
+    [AST_MANUFACT]       NVARCHAR (255) NULL,
+    [AST_MANUF_DATE]     DATETIME       NULL,
+    [AST_PASSPORT]       NVARCHAR (50)  NULL,
+    [AST_REG_NO]         NVARCHAR (50)  NULL,
+    [AST_DEPREC_CODE]    NVARCHAR (32)  NULL,
+    [AST_DEPREC_PERCENT] MONEY          NULL,
+    [AST_DEFERRAL_ACC]   INT            NULL,
+    [AST_CONTRA_ACC]     INT            NULL,
+    [AST_ACQ_COST]       MONEY          NULL,
+    [AST_ACQ_DEPREC]     MONEY          NULL,
+    [AST_OUT_DATE]       DATETIME       NULL,
+    [AST_OUT_ACT_NO]     NVARCHAR (50)  NULL,
+    [AST_OUT_ACT_DATE]   DATETIME       NULL,
+    [AST_OUT_REASON]     NVARCHAR (128) NULL,
+    [AST_RES_VALUE]      MONEY          NULL,
+    [AST_USEFUL_LIFE]    MONEY          NULL,
+    [AST_CURRENT_DEPREC] MONEY          NULL,
+    CONSTRAINT [PK_ENT_ASSETS] PRIMARY KEY NONCLUSTERED ([ENT_ID] ASC)
+);
+

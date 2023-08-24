@@ -1,0 +1,40 @@
+﻿CREATE TABLE [dbo].[DB_PARAMS] (
+    [DB_ID]      INT            NOT NULL,
+    [PRM_ID]     INT            NOT NULL,
+    [PRM_LONG]   INT            NULL,
+    [PRM_STRING] NVARCHAR (255) NULL,
+    [PRM_DOUBLE] FLOAT (53)     NULL,
+    [PRM_DATE]   DATETIME       NULL,
+    [PRM_CY]     MONEY          NULL,
+    CONSTRAINT [PK_DB_PARAMS] PRIMARY KEY NONCLUSTERED ([DB_ID] ASC, [PRM_ID] ASC),
+    CONSTRAINT [FK_DB_PARAMS_DB_PARAM_NAMES] FOREIGN KEY ([PRM_ID]) REFERENCES [dbo].[DB_PARAM_NAMES] ([PRM_ID]) NOT FOR REPLICATION
+);
+
+
+GO
+ALTER TABLE [dbo].[DB_PARAMS] NOCHECK CONSTRAINT [FK_DB_PARAMS_DB_PARAM_NAMES];
+
+
+GO
+GRANT DELETE
+    ON OBJECT::[dbo].[DB_PARAMS] TO [ap_public]
+    AS [dbo];
+
+
+GO
+GRANT INSERT
+    ON OBJECT::[dbo].[DB_PARAMS] TO [ap_public]
+    AS [dbo];
+
+
+GO
+GRANT SELECT
+    ON OBJECT::[dbo].[DB_PARAMS] TO [ap_public]
+    AS [dbo];
+
+
+GO
+GRANT UPDATE
+    ON OBJECT::[dbo].[DB_PARAMS] TO [ap_public]
+    AS [dbo];
+

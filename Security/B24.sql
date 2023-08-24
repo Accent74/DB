@@ -1,0 +1,63 @@
+﻿CREATE SCHEMA [B24]
+    AUTHORIZATION [dbo];
+
+
+GO
+GRANT ALTER
+    ON SCHEMA::[B24] TO [ap_public];
+
+
+GO
+GRANT CONTROL
+    ON SCHEMA::[B24] TO [ap_public];
+
+
+GO
+GRANT CREATE SEQUENCE
+    ON SCHEMA::[B24] TO [ap_public];
+
+
+GO
+GRANT DELETE
+    ON SCHEMA::[B24] TO [ap_public];
+
+
+GO
+GRANT EXECUTE
+    ON SCHEMA::[B24] TO [ap_public];
+
+
+GO
+GRANT INSERT
+    ON SCHEMA::[B24] TO [ap_public];
+
+
+GO
+GRANT REFERENCES
+    ON SCHEMA::[B24] TO [ap_public];
+
+
+GO
+GRANT SELECT
+    ON SCHEMA::[B24] TO [ap_public];
+
+
+GO
+GRANT TAKE OWNERSHIP
+    ON SCHEMA::[B24] TO [ap_public];
+
+
+GO
+GRANT UPDATE
+    ON SCHEMA::[B24] TO [ap_public];
+
+
+GO
+GRANT VIEW DEFINITION
+    ON SCHEMA::[B24] TO [ap_public];
+
+
+GO
+GRANT VIEW CHANGE TRACKING
+    ON SCHEMA::[B24] TO [ap_public];
+

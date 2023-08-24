@@ -1,0 +1,22 @@
+﻿CREATE TABLE [dbo].[MISC_ATTR] (
+    [MSC_NO]      INT           IDENTITY (1, 1) NOT NULL,
+    [MSC_VISIBLE] INT           NULL,
+    [MS1_NAME]    NVARCHAR (50) NULL,
+    [MS2_NAME]    NVARCHAR (50) NULL,
+    [MS3_NAME]    NVARCHAR (50) NULL,
+    [ML1_NAME]    NVARCHAR (50) NULL,
+    [ML1_TYPE]    INT           NULL,
+    [ML2_NAME]    NVARCHAR (50) NULL,
+    [ML2_TYPE]    INT           NULL,
+    [ML3_NAME]    NVARCHAR (50) NULL,
+    [ML3_TYPE]    INT           NULL,
+    [MC1_NAME]    NVARCHAR (50) NULL,
+    [MC2_NAME]    NVARCHAR (50) NULL,
+    [MC3_NAME]    NVARCHAR (50) NULL,
+    [MD1_NAME]    NVARCHAR (50) NULL,
+    [MD2_NAME]    NVARCHAR (50) NULL,
+    [MD3_NAME]    NVARCHAR (50) NULL,
+    [MSC_FLAGS]   INT           NULL,
+    CONSTRAINT [PK_MISC_ATTR] PRIMARY KEY NONCLUSTERED ([MSC_NO] ASC)
+);
+

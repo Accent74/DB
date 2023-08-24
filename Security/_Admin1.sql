@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [_Admin1]
+    AUTHORIZATION [_Admin];
+

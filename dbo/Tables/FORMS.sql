@@ -1,0 +1,38 @@
+﻿CREATE TABLE [dbo].[FORMS] (
+    [FRM_ID]     INT              IDENTITY (1, 1) NOT NULL,
+    [FRM_GUID]   UNIQUEIDENTIFIER CONSTRAINT [DF_FORMS_FRM_GUID] DEFAULT (newid()) ROWGUIDCOL NOT NULL,
+    [FRM_TYPE]   SMALLINT         NOT NULL,
+    [FRM_PARENT] INT              NULL,
+    [FRM_NAME]   NVARCHAR (255)   NULL,
+    [FRM_SHORT]  NVARCHAR (16)    NULL,
+    [FRM_FILE]   NVARCHAR (255)   NULL,
+    [FRM_MEMO]   NVARCHAR (255)   NULL,
+    [FA_ID]      INT              NULL,
+    [FLD_ID]     INT              NULL,
+    [FRM_TAG]    NVARCHAR (50)    NULL,
+    CONSTRAINT [PK_FORMS] PRIMARY KEY NONCLUSTERED ([FRM_ID] ASC),
+    CONSTRAINT [FK_FORMS_FOLDERS] FOREIGN KEY ([FLD_ID]) REFERENCES [dbo].[FOLDERS] ([FLD_ID]) NOT FOR REPLICATION,
+    CONSTRAINT [FK_FORMS_FRM_AUTONUM] FOREIGN KEY ([FA_ID]) REFERENCES [dbo].[FRM_AUTONUM] ([FA_ID]) NOT FOR REPLICATION
+);
+
+
+GO
+ALTER TABLE [dbo].[FORMS] NOCHECK CONSTRAINT [FK_FORMS_FOLDERS];
+
+
+GO
+ALTER TABLE [dbo].[FORMS] NOCHECK CONSTRAINT [FK_FORMS_FRM_AUTONUM];
+
+
+GO
+----------------------------------------
+create trigger forms_Dtrig on FORMS
+for delete as
+
+-- cascade deletes from FRM_LINKS
+delete FRM_LINKS from deleted inner join FRM_LINKS ON deleted.FRM_ID = FRM_LINKS.FRM_ID_LEFT
+delete FRM_LINKS from deleted inner join FRM_LINKS ON deleted.FRM_ID = FRM_LINKS.FRM_ID_RIGHT
+-- cascade deletes from FRM_PARAMS
+delete FRM_PARAMS from deleted inner join FRM_PARAMS ON deleted.FRM_ID = FRM_PARAMS.FRM_ID
+
+
